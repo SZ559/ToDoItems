@@ -1,0 +1,163 @@
+:host {
+  width: 28%;
+  height: 85%;
+  margin: auto;
+  border: 1.5px solid black;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  position: center;
+}
+
+div.back{
+  position: relative;
+  top: 0%;
+  left: 0%;
+}
+
+div.parentItem{
+  position: relative;
+  top: 5%;
+  left: 0px;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: row;
+  padding: 5px;
+  border: 1.5px solid black;
+  justify-content: space-between;
+}
+
+div.parentItem input[type="text"]{
+  top: 50%;
+  width: 80%;
+}
+
+div.parentItem button{
+  top: 50%;
+}
+
+div.create-sub-item{
+  position: relative;
+  left: 0px;
+  top: 8%;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+div.sub-items-list{
+  position: relative;
+  left: 0px;
+  top: 10%;
+  height: 65%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid black;
+  overflow: auto;
+}
+div.sub-items-list input[type="text"]{
+  width: 60%;
+  margin: 5px;
+}
+div.sub-items-list button{
+  background-color: pink;
+  width: 20%;
+  margin: 5px;
+  text-size-adjust: auto;
+  border: none;
+}
+
+div.save-delete-operation{
+  position: relative;
+  left: 0px;
+  top: 8%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.save-delete-operation button[name ="delete"]{
+  background-color: pink;
+  margin: 5px;
+  text-size-adjust: auto;
+  border: none;
+}
+
+div.save-delete-operation button[name ="save"]{
+  background-color: lightblue;
+  margin: 5px;
+  text-size-adjust: auto;
+  border: none;
+}
+
+
+/* .star{
+  background-color: pink;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  top: 50%;
+}
+.starmark {
+  background-color: pink;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  top: 50%;
+} */
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  width: 8%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.starmark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .starmark {
+  background-color: yellow;
+  border: 0.1px black;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .starmark {
+  background-color: yellow;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.starmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .starmark:after {
+  display: block;
+}
+
+
+
+

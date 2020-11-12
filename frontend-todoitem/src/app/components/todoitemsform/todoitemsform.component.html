@@ -1,0 +1,23 @@
+<div class="theme">To-Do List</div>
+<div class = "searchBox">
+    <input type = "text" [(ngModel)] = "filter" placeholder="Search (Press Enter to Search)" (keydown.enter) = "updateSearchResult()">
+    <button (click) = "reload()">Reload</button>
+</div>
+<div class = "buttonCluster">
+    <button (click) = "sortByDescription()">Sort by description</button>
+    <button (click) = "sortByCreationTime()">Sort by creationTime</button>
+    <button (click) = "this.isDoneButtonVisible = !this.isDoneButtonVisible">Show/Hide done</button>
+</div>
+<div class = "toDoItemList">
+    <div *ngFor="let item of filteredToDoItems">
+        <input type = "checkbox" [checked] = "item.done" (change) = "itemDoneChanged(item)" *ngIf="this.isDoneButtonVisible">
+        <label class = "toDoItem" [routerLink]="['/item', item.id]">{{item.description}}</label>
+        <label class="container">
+          <input type = "checkbox" [checked] = "item.favorite" (change) = "itemFavoriteChanged(item)">
+          <span class="starmark"></span>
+        </label>
+    </div>
+</div>
+<div class = "createItem">
+    <button (click) = "createItem()">Create New Item</button>
+</div>

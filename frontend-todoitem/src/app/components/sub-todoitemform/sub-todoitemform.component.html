@@ -1,0 +1,33 @@
+
+  <div class = "back">
+    <button (click) = "backToToDoItemsList()">Back to To-Do List</button>
+    </div>
+  <div class = "parentItem">
+    <input type = "checkbox" [(ngModel)] = "item.done" (change) = "synchronizeDoneStatusOfSubItems()">
+    <input type = "text"  [(ngModel)] = "item.description" [placeholder] = "item.description">
+    <label class="container">
+      <input type = "checkbox" class = "star" [(ngModel)] = "item.favorite">
+      <span class="starmark"></span>
+    </label>
+   </div>
+   <div class = "create-sub-item">
+    <label> Sub-items </label>
+    <button (click) = "createSubItem()">Create Sub-item</button>
+  </div>
+  <div class = "sub-items-list" >
+    <div *ngFor="let subItem of item.children">
+        <input type = "checkbox" [(ngModel)]  = "subItem.done" (change) = "synchronizeDoneStatusOfMainItem()">
+        <input type = "text" [(ngModel)]  = "subItem.description" [placeholder] = "subItem.description">
+        <button (click) = "deleteSubItem(subItem)">Delete</button>
+    </div>
+  </div>
+
+  <div class = "save-delete-operation">
+    <button (click) = "deleteItem()" name = "delete">Delete</button>
+    <label *ngIf = "item.createdTime">Created on {{item.createdTime}}</label>
+    <button (click) = "saveItem()" name = "save">Save</button>
+</div>
+
+
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BackendForToDoItem</name>
+    </assembly>
+    <members>
+        <member name="M:BackendForToDoItem.Controllers.ToDoItemController.GetAsync(System.String)">
+            <summary>
+            Get the To Do Item by id
+            </summary>
+            <param name="id">The id of the To Do Item.</param>
+            <returns></returns>
+            <response code="200">Successfully get all To Do Item with id</response>
+            <response code="404">Cannot find the To Do Item with enetered id.</response>   
+        </member>
+        <member name="M:BackendForToDoItem.Controllers.ToDoItemController.QueryToDoItem(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Query To Do Items by description and done
+            </summary>
+            <param name="description">The descripion of the To Do Item; Can be empty.</param>
+            <param name="done">The status of the To Do Item. Can be empty.</param>
+            <returns></returns>
+            <response code="200">Successfully get all To Do Item with specific description and status</response>
+        </member>
+        <member name="M:BackendForToDoItem.Controllers.ToDoItemController.DeleteAsync(System.String)">
+            <summary>
+            Delete To Do Item by id
+            </summary>
+            <param name="id">Id of To Do Item to be deleted</param>
+            <returns></returns>
+            <response code="204">Successfully delete the To Do Item with id.</response>
+            <response code="404">Cannot find the To Do Item with enetered id.</response> 
+        </member>
+        <member name="M:BackendForToDoItem.Controllers.ToDoItemController.UpsertAsync(BackendForToDoItem.Entity.ToDoItem)">
+            <summary>
+            If To Do Item already existed, update the To Do Item. Otherwise, create a new To Do Item.
+            </summary>
+            <param name="item">To Do Item needed to be created.</param>
+            <returns></returns>
+            <response code="200">Successfully upsert the To Do Item.</response>
+            <response code="400">The Id of the to do item is null or empty.</response>
+        </member>
+        <member name="T:BackendForToDoItem.Entity.ToDoItemUpdateModel">
+            <summary>
+            Partial Update Model
+            </summary>
+        </member>
+        <member name="P:BackendForToDoItem.Entity.ToDoItemUpdateModel.Description">
+            <summary>
+            If not empty, database will update the value
+            </summary>
+        </member>
+    </members>
+</doc>
